@@ -9,21 +9,26 @@ def multiplicacao(a, b):
 
 def divisao(a, b):
         if b == 0:
-            raise ValueError("Proibido Divisao por 0")
+            raise ValueError("Proibido Divisao por 0!")
         return a / b
 
-print ("Calculadora iniciada")
+print ("Calculadora iniciada!")
 
 
 
 while True:
-       print("\n(0)SAIR \n(1) SOMA \n(2) SUBTRACAO \n(3) MULTIPLICACAO \n(4) DIVISAO")
-       opcao = int(input("Selecione uma operacao: "))
-       if opcao == 0:
-              break
+       print("\n(0) SAIR \n(1) SOMA \n(2) SUBTRACAO \n(3) MULTIPLICACAO \n(4) DIVISAO")
 
-       a = float(input("Digite o valor de A: "))
-       b = float(input("Digite o valor de B: "))
+       try:
+            opcao = int(input("Selecione uma operacao: "))
+            if opcao == 0:
+                break
+            a = float(input("Digite o valor de A: "))
+            b = float(input("Digite o valor de B: "))
+       except ValueError:
+            print("Digite apenas numeros!")
+            continue
+       
        print("\n")
 
        try: 
@@ -40,7 +45,7 @@ while True:
                    resultado = divisao(a, b)
                    print("A / B = ", resultado)
             else: 
-                print("Nao tem essa opcao")
+                print("Nao tem essa opcao!")
        except ValueError as erro:
               print(erro)
 
