@@ -7,5 +7,9 @@ def subtracao(a, b):
 def multiplicacao(a, b):
         return a * b
 
+def divisao(a, b):
+        if b == 0:
+            raise ValueError("Proibido Divisao por 0")
+        return a / b
 
 print ("Calculadora iniciada")
